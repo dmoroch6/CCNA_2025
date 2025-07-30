@@ -1,1 +1,113 @@
+Switch & Router Basic Configurations: 
+
+1) User Levels	
+   - Navigation on the Cisco CLI
+	>config terminal	
+	>enable
+
+2) Hostname Custom hostname:
+Router>
+>enable 
+>config t
+>hostname R1
+> R1
+
+
+3) Banner motd/message:
+SW1> 
+>enable
+>config t
+>banner motd Hey, there.
+
+
+4) Enable password
+>enable
+>config t
+>enable password R1 
+
+5) Enable console line Password when you start console.
+SW1:	
+>enable 
+>config t
+>line 0 
+>password SW1
+>login
+
+6) Line VTY password: 
+>config t
+>line vty 0 15
+>password SW1
+>login
+
+7) Exec timeout	Prevent to staying logged in unattended
+>enable 
+>config t
+>line 0 / vty 0-15
+>exec-timeout 5 0 
+
+8)Logging Synchronous:
+>config t
+>line 0 / vty 0-15
+>logging synchronous
+
+
+9) Disabling ip domain looku- Deactivating the disgusting message when you type the wrong command. 
+>enable 
+>confg t
+>no ip domain lookup
+
+10) IP domain name	Basically setting up a domain. 
+>enable 
+>confg t
+>ip domain-name cisco.com
+>>ip domain-lookupiDNS lookup for host → ip computer )
+>ip name-server 8.8.8.8 (DNS server ip)
+
+11) Username and password	
+	When you have a ssh connection you should have a user and password configuration.	
+>enable 
+>confg t
+>user “Admin” password “Admin”
+
+12) Encrypting all passwords	
+	Weak encryption method, service password encryption	
+>enable 
+>confg t
+>service password encryption
+
+13)Set Current Clock Time	
+enable
+clock set hh:mm:ss day month year
+
+14)Set management IP switch
+>enable
+>config t
+>int vlan 1 
+>ip address “IP”
+>exit
+>ip default-gateway 192.168.1
+
+
+STILL NEET TO CONFIGURE THIS PART
+----------------------------------------------------------------------------
+15)Prevent Brute-force Attack-Router (Just configurable in the router)
+
+→logging block 180 attempts “number attempts" within “# seconds”<--	enable
+config t
+logging block 180 attempts 3 within 53
+----------------------------------------------------------------------------
+STILL NEET TO CONFIGURE THIS PART
+
+
+16) Viewing Running & Startup Configs
+>show run
+>show startup
+
+17)Saving running into startup configs	
+>Do write
+
+
+
+
+
 
